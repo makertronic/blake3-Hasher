@@ -1,3 +1,11 @@
+// --------------------------------------------------------------------
+// Project: blake3 hasher
+// Creation date: 2023/07/04
+// Author: Makertronic 
+// web: http://www.makertronic-yt.com
+// --------------------------------------------------------------------
+
+
 use std::env;
 use std::fs::File;
 use std::fs;
