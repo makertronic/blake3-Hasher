@@ -8,7 +8,7 @@
 use std::env;
 use std::fs::File;
 use std::fs;
-use std::io::{self, BufReader};
+use std::io::{self, Read, BufReader};
 use blake3::Hasher;
 use hex;
 use rayon::prelude::*;

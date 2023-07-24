@@ -8,7 +8,7 @@
 use std::env;
 use std::fs::File;
 use std::fs;
-use std::io::{self, BufReader};
+use std::io::{self, Read, BufReader};
 use blake3::Hasher;
 use hex;
 use rayon::prelude::*;
@@ -21,10 +21,10 @@ fn main() -> io::Result<()> {
     }
 
     let path = &args[1];
+    let mut buf = Vec::new();
     fs::read_dir(path)?
         .par_bridge()
         .try_for_each(|entry| -> io::Result<()> {
-            let entry = entry?;
             let path = entry.path();
             if path.is_file() {
                 let file = File::open(&path)?;
